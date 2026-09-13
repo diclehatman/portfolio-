@@ -145,6 +145,17 @@ h1, h2, h3, h4, h5, h6, .serif {
     transform: translateY(0);
 }
 
+.zoom-in {
+    opacity: 0;
+    transform: scale(0.85) translateZ(-50px);
+    transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.zoom-in.visible {
+    opacity: 1;
+    transform: scale(1) translateZ(0);
+}
+
 /* Navbar */
 .navbar {
     position: fixed;
@@ -231,6 +242,13 @@ h1, h2, h3, h4, h5, h6, .serif {
     align-items: center;
 }
 
+.hero-text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 .hero-intro {
     font-size: 0.75rem;
     letter-spacing: 2px;
@@ -243,11 +261,31 @@ h1, h2, h3, h4, h5, h6, .serif {
     font-size: clamp(4rem, 9vw, 9.5rem);
     margin-bottom: 2rem;
     letter-spacing: -2px;
+    position: relative;
 }
 
-.hero-title .italic {
-    padding-left: 15%;
-    color: var(--color-burgundy);
+.hero-title .block {
+    background: linear-gradient(120deg, var(--color-text-light) 40%, #ffffff 50%, var(--color-text-light) 60%);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shineText 3s linear infinite;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.hero-title .block.italic {
+    background: linear-gradient(120deg, var(--color-gold) 40%, #ffffff 50%, var(--color-gold) 60%);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
+}
+
+@keyframes shineText {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
 }
 
 .hero-statement {
@@ -269,15 +307,15 @@ h1, h2, h3, h4, h5, h6, .serif {
     bottom: 3rem;
     left: 4rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    transform: rotate(-90deg);
-    transform-origin: left center;
+    gap: 0.8rem;
+    z-index: 10;
 }
 
 .scroll-indicator .line {
-    width: 60px;
-    height: 1px;
+    width: 1px;
+    height: 60px;
     background-color: rgba(255,255,255,0.2);
     display: block;
     position: relative;
@@ -296,14 +334,15 @@ h1, h2, h3, h4, h5, h6, .serif {
 }
 
 @keyframes scrollLine {
-    0% { transform: translateX(-100%); }
-    50% { transform: translateX(0); }
-    100% { transform: translateX(100%); }
+    0% { transform: translateY(-100%); }
+    50% { transform: translateY(0); }
+    100% { transform: translateY(100%); }
 }
 
 .scroll-indicator .text {
     font-size: 0.65rem;
     letter-spacing: 3px;
+    color: rgba(255,255,255,0.6);
 }
 
 /* About Section */
@@ -734,13 +773,8 @@ h1, h2, h3, h4, h5, h6, .serif {
     }
     
     .hero-image-wrapper {
-        height: 60vh;
+        display: none !important;
     }
-    
-    .scroll-indicator {
-        display: none;
-    }
-    
     .about-image-wrapper {
         height: 60vh;
     }
@@ -774,25 +808,94 @@ h1, h2, h3, h4, h5, h6, .serif {
 }
 
 @media (max-width: 768px) {
-    section {
-        padding: 6rem 0;
+    .container {
+        padding: 0 1.5rem;
     }
+    
+    section {
+        padding: 5rem 0;
+    }
+
+    .scroll-indicator {
+        left: 1.5rem;
+        bottom: 2rem;
+    }
+
+    /* Typography Adjustments */
+    .hero-text-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-title {
+        order: 1;
+        font-size: clamp(2.5rem, 12vw, 4.5rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-intro {
+        order: 2;
+        margin-bottom: 1rem;
+    }
+
+    .hero-statement {
+        order: 3;
+    }
+    
+    .about-text-wrapper .section-title,
+    .skills .section-title,
+    .projects .large-title,
+    .contact .section-title {
+        font-size: clamp(2.5rem, 10vw, 4.5rem);
+        margin-bottom: 3rem;
+    }
+    
+    .contact-email {
+        font-size: clamp(1.2rem, 6vw, 2.5rem);
+    }
+    
+    /* Layout Adjustments */
+    .hero-image-wrapper {
+        display: none !important;
+    }
+
+    .about-grid,
+    .skills-grid,
+    .project-item,
+    .project-item.reverse,
+    .contact-grid,
+    .footer-content {
+        gap: 2rem;
+    }
+
+    .project-item,
+    .project-item.reverse {
+        margin-bottom: 4rem;
+    }
+
+    .project-image-wrapper {
+        height: 40vh;
+    }
+
+    /* Navigation / Hamburger */
     .hamburger span {
         display: block;
         width: 30px;
         height: 1px;
         background-color: currentColor;
-        transition: var(--transition-base);
+        transition: var(--transition-fast);
     }
     
     .nav-links {
-        display: flex; /* Keep it flex but hidden via opacity */
+        display: flex;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: var(--color-dark); /* Dark background as requested */
+        background-color: var(--color-dark);
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -801,7 +904,6 @@ h1, h2, h3, h4, h5, h6, .serif {
         list-style: none;
         margin: 0;
         padding: 0;
-        
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.4s ease, visibility 0.4s ease;
@@ -816,7 +918,7 @@ h1, h2, h3, h4, h5, h6, .serif {
         font-family: var(--font-sans);
         font-size: 1.5rem;
         letter-spacing: 4px;
-        color: var(--color-cream);
+        color: var(--color-light);
         text-decoration: none;
         text-transform: uppercase;
     }
@@ -830,7 +932,7 @@ h1, h2, h3, h4, h5, h6, .serif {
     }
     
     .hamburger.active span {
-        background-color: var(--color-cream);
+        background-color: var(--color-light);
     }
     
     .hamburger.active span:nth-child(1) {
@@ -849,7 +951,12 @@ h1, h2, h3, h4, h5, h6, .serif {
     .contact-grid,
     .footer-content {
         grid-template-columns: 1fr;
-        gap: 3rem;
+    }
+
+    .submit-btn {
+        align-self: center;
+        width: 100%;
+        max-width: 300px;
     }
     
     .footer-content {

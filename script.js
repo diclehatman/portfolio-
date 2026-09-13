@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     // Observe elements
-    const animatedElements = document.querySelectorAll('.fade-up, .reveal-text');
+    const animatedElements = document.querySelectorAll('.fade-up, .reveal-text, .zoom-in');
     animatedElements.forEach(el => {
         observer.observe(el);
     });
