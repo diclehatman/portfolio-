@@ -4,23 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIGI DESIGN | UX/UI Designer Portfolio</title>
-    <meta name="description" content="Gigi Design - UX/UI Designer creating elegant, intuitive, and meaningful digital experiences. View my portfolio for luxury brand designs, web interfaces, and creative art direction.">
-    <meta name="keywords" content="UX/UI Design, UI Designer, Web Design, Gigi Design, Luxury Portfolio, Art Direction, Graphic Design, Figma, Adobe, Turkey">
+    <title>GIGI DESIGN | Digital Marketer & Designer Portfolio</title>
+    <meta name="description" content="Gigi Design - Digital Marketer & Designer creating elegant, intuitive, and measurable digital experiences. View my portfolio for luxury brand designs, web interfaces, and creative art direction.">
+    <meta name="keywords" content="Digital Marketing, UX/UI Design, Web Design, Gigi Design, Luxury Portfolio, Art Direction, Visual Identity, Brand Strategy, Turkey">
     <meta name="author" content="Gigi Design">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="GIGI DESIGN | UX/UI Designer Portfolio">
-    <meta property="og:description" content="Gigi Design - UX/UI Designer creating elegant, intuitive, and meaningful digital experiences.">
+    <meta property="og:title" content="GIGI DESIGN | Digital Marketer & Designer Portfolio">
+    <meta property="og:description" content="Gigi Design - Digital Marketer & Designer creating elegant, intuitive, and measurable digital experiences.">
     <meta property="og:image" content="images/-19.png">
     <meta property="og:site_name" content="Gigi Design">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="GIGI DESIGN | UX/UI Designer Portfolio">
-    <meta name="twitter:description" content="Gigi Design - UX/UI Designer creating elegant, intuitive, and meaningful digital experiences.">
+    <meta name="twitter:title" content="GIGI DESIGN | Digital Marketer & Designer Portfolio">
+    <meta name="twitter:description" content="Gigi Design - Digital Marketer & Designer creating elegant, intuitive, and measurable digital experiences.">
     <meta name="twitter:image" content="images/-19.png">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +28,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=1.8">
+    <link rel="stylesheet" href="style.css?v=2.6">
     <link rel="icon" type="image/png" href="images/BLACK AND GOLD_1.png">
 </head>
 
@@ -37,15 +37,22 @@
     <nav class="navbar">
         <div class="logo">GIGI DESIGN</div>
         <ul class="nav-links">
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#skills">SKILLS</a></li>
-            <li><a href="#projects">PROJECTS</a></li>
-            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="#home" class="active" data-i18n="navHome">HOME</a></li>
+            <li><a href="#about" data-i18n="navAbout">ABOUT</a></li>
+            <li><a href="#skills" data-i18n="navSkills">SKILLS</a></li>
+            <li><a href="#references" data-i18n="navReferences">REFERENCES</a></li>
+            <li><a href="#contact" data-i18n="navContact">CONTACT</a></li>
         </ul>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
+        <div class="nav-actions">
+            <div class="lang-switch" aria-label="Dil Seçimi / Language">
+                <button type="button" class="lang-btn" data-lang="tr">TR</button>
+                <span class="lang-divider">|</span>
+                <button type="button" class="lang-btn" data-lang="en">EN</button>
+            </div>
+            <div class="hamburger" aria-label="Menü / Menu">
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
@@ -62,7 +69,7 @@
                             <span class="block">GIGI</span>
                             <span class="block italic">DESIGN</span>
                         </h1>
-                        <p class="hero-statement zoom-in delay-1">Where strategy meets aesthetics.</p>
+                        <p class="hero-statement zoom-in delay-1" data-i18n="heroStatement">Where strategy meets aesthetics.</p>
                     </div>
                     <div class="hero-image-wrapper fade-up delay-2">
                         <img src="images/-19.png" alt="Gigi Design"
@@ -71,7 +78,7 @@
                 </div>
                 <div class="scroll-indicator fade-up delay-3">
                     <span class="line"></span>
-                    <span class="text">SCROLL</span>
+                    <span class="text" data-i18n="scrollText">SCROLL</span>
                 </div>
             </div>
         </section>
@@ -88,23 +95,66 @@
                         </div>
                     </div>
                     <div class="about-text-wrapper">
-                        <h2 class="section-title reveal-text"><span class="block">ABOUT</span><span
-                                class="block italic">GIGI</span></h2>
+                        <h2 class="section-title reveal-text" data-i18n-html="aboutTitle">
+                            <span class="block">ABOUT</span>
+                        </h2>
                         <div class="about-description fade-up">
-                            <p>I create thoughtful digital experiences that balance aesthetics, functionality, and
-                                user
-                                needs.</p>
-                            <p>I am passionate about transforming ideas into intuitive interfaces and visually
-                                meaningful digital products.</p>
+                            <!-- Alt başlık: serif, italik -->
+                            <p class="about-subtitle italic" data-i18n="aboutSubtitle">Strategy and aesthetics, under one roof.</p>
 
-                            <h3 class="focus-title">Focus areas:</h3>
-                            <ul class="focus-list">
-                                <li>UX/UI Design</li>
-                                <li>Digital Experiences</li>
-                                <li>Visual Design</li>
-                                <li>Creative Direction</li>
-                                <li>Web Design</li>
-                            </ul>
+                            <p data-i18n="aboutP1">I'm Gigi, a digital marketer and designer. I bring strategy and aesthetics together so brands look refined and perform in the digital world.</p>
+                            <p data-i18n="aboutP2">From UX/UI and visual identity to digital campaigns and content strategy, I craft experiences that are both beautiful and measurable.</p>
+
+                            <!-- İki sütunlu yetkinlik alanı -->
+                            <div class="competency-grid">
+                                <div class="competency-col">
+                                    <h3 class="competency-title" data-i18n="compTitle1">DESIGN</h3>
+                                    <ul class="competency-list">
+                                        <li data-i18n="comp1Item1">UX/UI Design</li>
+                                        <li data-i18n="comp1Item2">Visual Identity</li>
+                                        <li data-i18n="comp1Item3">Web Design</li>
+                                        <li data-i18n="comp1Item4">Social Media Visuals</li>
+                                    </ul>
+                                </div>
+                                <div class="competency-col">
+                                    <h3 class="competency-title" data-i18n="compTitle2">DIGITAL MARKETING</h3>
+                                    <ul class="competency-list">
+                                        <li data-i18n="comp2Item1">Content Strategy</li>
+                                        <li data-i18n="comp2Item2">Social Media Management</li>
+                                        <li data-i18n="comp2Item3">Digital Ad Campaigns</li>
+                                        <li data-i18n="comp2Item4">Performance Analytics</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!--
+                            ============================================================
+                            RAKAM ŞERİDİ / STATS STRIP
+                            ============================================================
+                            Bu şerit şu anda GİZLİDİR. Yer tutucu değerler "[00]"
+                            gerçek rakamlarla değiştirilene kadar görünmez.
+                            Rakamları güncellemek için:
+                              1. Aşağıdaki her <span class="stat-number"> içindeki değeri değiştirin.
+                              2. Aynı değerleri script.js'deki translations nesnesinde
+                                 statProjects, statClients, statYears anahtarlarında da güncelleyin.
+                              3. Her iki dosyada da "[00]" / "[0]" ifadesi kalmadığında
+                                 şerit otomatik olarak görünür hâle gelecektir.
+                            ============================================================
+                            -->
+                            <div class="about-stats-strip" id="about-stats-strip">
+                                <div class="stat-item">
+                                    <span class="stat-number" data-i18n="statProjects">[00]+</span>
+                                    <span class="stat-label" data-i18n="statProjectsLabel">Projects Completed</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number" data-i18n="statClients">[00]+</span>
+                                    <span class="stat-label" data-i18n="statClientsLabel">Happy Clients</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number" data-i18n="statYears">[0]</span>
+                                    <span class="stat-label" data-i18n="statYearsLabel">Years of Experience</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -114,25 +164,26 @@
         <!-- SKILLS SECTION -->
         <section id="skills" class="skills section-dark">
             <div class="container">
-                <h2 class="section-title reveal-text"><span class="block">CREATIVE</span><span
-                        class="block italic">TOOLKIT</span></h2>
+                <h2 class="section-title reveal-text" data-i18n-html="skillsTitle">
+                    <span class="block">CREATIVE</span><span class="block italic">TOOLKIT</span>
+                </h2>
 
                 <div class="skills-grid">
                     <div class="skill-card fade-up">
                         <div class="skill-number">01</div>
-                        <h3 class="skill-category">UX / UI DESIGN</h3>
+                        <h3 class="skill-category" data-i18n="skillCat1">UX / UI DESIGN</h3>
                         <ul class="skill-list">
                             <li>Figma</li>
                             <li>Wireframing</li>
                             <li>Prototyping</li>
-                            <li>User Research</li>
-                            <li>User Experience</li>
-                            <li>Design Systems</li>
+                            <li data-i18n="skillUserResearch">User Research</li>
+                            <li data-i18n="skillUserExp">User Experience</li>
+                            <li data-i18n="skillDesignSystems">Design Systems</li>
                         </ul>
                     </div>
                     <div class="skill-card fade-up delay-1">
                         <div class="skill-number">02</div>
-                        <h3 class="skill-category">VISUAL DESIGN</h3>
+                        <h3 class="skill-category" data-i18n="skillCat2">VISUAL DESIGN</h3>
                         <ul class="skill-list">
                             <li>Adobe Photoshop</li>
                             <li>Adobe Illustrator</li>
@@ -142,102 +193,36 @@
                     </div>
                     <div class="skill-card fade-up delay-2">
                         <div class="skill-number">03</div>
-                        <h3 class="skill-category">DEVELOPMENT</h3>
+                        <h3 class="skill-category" data-i18n="skillCat3">DEVELOPMENT</h3>
                         <ul class="skill-list">
                             <li>HTML</li>
                             <li>CSS</li>
                             <li>JavaScript</li>
-                            <li>Responsive Web Design</li>
+                            <li data-i18n="skillResponsive">Responsive Web Design</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- PROJECTS SECTION -->
-        <section id="projects" class="projects section-light">
+        <!-- REFERENCES SECTION -->
+        <section id="references" class="references projects section-light">
             <div class="container">
-                <h2 class="section-title large-title reveal-text"><span class="block">SELECTED</span><span
-                        class="block italic">PROJECTS</span></h2>
+                <h2 class="section-title large-title reveal-text" data-i18n-html="referencesTitle">
+                    <span class="block">SELECTED</span><span class="block italic">REFERENCES</span>
+                </h2>
 
-                <!-- FIGMA PROJECTS -->
-                <div class="project-category fade-up">
-                    <h3 class="category-title">01 FIGMA</h3>
-                    <div class="projects-list">
-                        <div class="project-item">
-                            <div class="project-info">
-                                <h4>PROJECT 01</h4>
-                                <h3>Restaurant Mobile App</h3>
-                                <p class="project-tags">UX/UI DESIGN &bull; 2026</p>
-                            </div>
-                            <a href="https://www.figma.com/proto/BXSwZgdUAT44kfmRPnj7uZ/elvira?node-id=50-345&t=5QwZF5RPBJkcG4np-1"
-                                target="_blank" class="project-image-wrapper"
-                                style="display: block; text-decoration: none;">
-                                <!-- PROJECT IMAGE -->
-                                <img src="images/ Phone Mockup.png" alt="Restaurant Mobile App" class="project-image"
-                                    style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
-                                <div class="project-overlay">
-                                    <span class="view-text">VIEW PROJECT</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <!-- Referans kartları script.js içerisindeki referencesData'dan dinamik olarak oluşturulur -->
+                <div id="references-container" class="projects-list"></div>
 
-                <!-- ADOBE PROJECTS -->
-                <div class="project-category fade-up">
-                    <h3 class="category-title">02 ADOBE</h3>
-                    <div class="projects-list">
-                        <div class="project-item reverse">
-                            <div class="project-info">
-                                <h4>PROJECT 02</h4>
-                                <h3>Brand Identity</h3>
-                                <p class="project-tags">POSTER &bull; BRANDING &bull; 2025</p>
-                            </div>
-                            <a href="adobe-projects.html" target="_blank" class="project-image-wrapper" style="display: block; text-decoration: none;">
-                                <!-- PROJECT IMAGE -->
-                                <img src="images/adobe  Mockup.png" alt="Brand Identity Mockup" class="project-image"
-                                    style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
-                                <div class="project-overlay">
-                                    <span class="view-text">VIEW PROJECT</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- CODE PROJECTS -->
-                <div class="project-category fade-up">
-                    <h3 class="category-title">03 CODE</h3>
-                    <div class="projects-list">
-                        <div class="project-item">
-                            <div class="project-info">
-                                <h4>PROJECT 03</h4>
-                                <h3>Portfolio Website</h3>
-                                <p class="project-tags">HTML / CSS / JAVASCRIPT</p>
-                            </div>
-                            <a href="https://mcacars.com" target="_blank" class="project-image-wrapper" style="display: block; text-decoration: none;">
-                                <!-- PROJECT IMAGE -->
-                                <img src="images/Website Mockup.png" alt="Portfolio Website" class="project-image" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
-                                <div class="project-overlay">
-                                    <span class="view-text">VIEW PROJECT</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            </div>
         </section>
 
         <!-- CONTACT SECTION -->
         <section id="contact" class="contact section-dark">
-            <!-- CONTACT BACKGROUND IMAGE PLACEHOLDER -->
-            <div class="contact-bg image-placeholder">
-                <span>Contact Background Image</span>
-            </div>
-            <div class="contact-overlay"></div>
-
             <div class="container contact-content">
-                <h2 class="section-title reveal-text">
+                <h2 class="section-title reveal-text" data-i18n-html="contactTitle">
                     <span class="block">LET'S CREATE</span>
                     <span class="block italic">SOMETHING</span>
                     <span class="block">BEAUTIFUL.</span>
@@ -253,21 +238,38 @@
                         </div>
                     </div>
                     <div class="contact-form-wrapper">
-                        <form class="contact-form">
+
+                        <form class="contact-form" id="contact-form" novalidate>
+
                             <div class="form-group">
-                                <input type="text" id="name" name="name" placeholder="Name" required>
-                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Name" data-i18n-placeholder="formName" autocomplete="name">
+                                <label for="name" data-i18n="formName">Name</label>
+                                <span class="field-error" id="error-name" role="alert"></span>
                             </div>
                             <div class="form-group">
-                                <input type="email" id="email" name="email" placeholder="Email" required>
-                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Email" data-i18n-placeholder="formEmail" autocomplete="email">
+                                <label for="email" data-i18n="formEmail">Email</label>
+                                <span class="field-error" id="error-email" role="alert"></span>
                             </div>
                             <div class="form-group">
-                                <textarea id="message" name="message" placeholder="Message" rows="1"
-                                    required></textarea>
-                                <label for="message">Message</label>
+                                <textarea id="message" name="message" placeholder="Message" data-i18n-placeholder="formMessage" rows="1"></textarea>
+                                <label for="message" data-i18n="formMessage">Message</label>
+                                <span class="field-error" id="error-message" role="alert"></span>
                             </div>
-                            <button type="submit" class="submit-btn">SEND MESSAGE</button>
+
+                            <!-- KVKK Onay Kutusu — form-group sınıfı yok, çakışma önlendi -->
+                            <div class="kvkk-group">
+                                <label class="kvkk-label" for="kvkk-consent">
+                                    <input type="checkbox" id="kvkk-consent" name="kvkk_consent" class="kvkk-checkbox">
+                                    <span class="kvkk-text" data-i18n-html="kvkkText">
+                                        I have read and accepted the
+                                        <a href="#" class="kvkk-link" target="_blank" rel="noopener noreferrer" data-i18n="kvkkLink">Privacy Notice</a>.
+                                    </span>
+                                </label>
+                                <span class="field-error" id="error-kvkk" role="alert"></span>
+                            </div>
+
+                            <button type="submit" class="submit-btn" id="submit-btn" data-i18n="sendBtn">SEND MESSAGE</button>
                         </form>
                     </div>
                 </div>
@@ -279,12 +281,12 @@
     <footer class="footer section-dark">
         <div class="container footer-content">
             <div class="footer-brand">GIGI DESIGN</div>
-            <div class="footer-role">UX/UI DESIGNER</div>
-            <div class="footer-copy">&copy; 2026 GIGI DESIGN. ALL RIGHTS RESERVED.</div>
+            <div class="footer-role" data-i18n="footerRole">DIGITAL MARKETER & DESIGNER</div>
+            <div class="footer-copy" data-i18n-html="footerCopy">&copy; 2026 GIGI DESIGN. ALL RIGHTS RESERVED.</div>
         </div>
     </footer>
 
-    <script src="script.js?v=1.8"></script>
+    <script src="script.js?v=2.8"></script>
 </body>
 
 </html>
